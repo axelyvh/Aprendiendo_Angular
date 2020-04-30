@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 1</title>
+    <link rel="stylesheet" href="../lib/prism/prism.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <script src="../lib/prism/prism.js"></script>
+</head>
+<body>
+    
+    <h1>Introducción a TypeScript</h1>
+
+    <h3>¿Que es TypeScript?</h3>
+    <ul>
+        <li>Lenguaje de programación tipado</li>
+        <li>Open Source</li>
+        <li>Desarrollado por Microsoft</li>
+        <li>Lenguaje de programación oficial de google</li>
+        <li>Podemos usar las últimas características de JavaScript</li>
+        <li>Este codigo de alto nivel necesita ser compilado</li>
+        <li>El proceso de compilación genera código JavaScript</li>
+        <li>Podemos ejecutar el código JavaScript en cualquier navegador o Sistema Operativo</li>
+    </ul>
+    <br>
+    <h3>¿Por qué usar TypeScript?</h3>
+    <ul>
+        <li>Orientado a Objetos</li>
+        <li>Soporte de verificación de tipos estáticos</li>
+        <li>Soporte de ES5, ES6, más</li>
+        <li>Se actualiza periódicamente</li>
+        <li>Comunidad activa</li>
+        <li>Puede prevenir cerca del 15% de bugs</li>
+    </ul>
+    <br>
+    <h2>El compilador TypeScript</h2>
+    <br>
+    <pre class="language-js">
+        <code class="language-js">
+            /**********************************************************************/
+            node --version
+            //resultado
+            v12.16.1
+            /**********************************************************************/
+            npm install -g typescript
+            tsc --version
+            //resultado
+            3.8.3
+            /**********************************************************************/
+            //para compilar un archivo typescript se ejecuta el siguiente comando
+            tsc src/hola.js
+        </code>
+    </pre>  
+    <br>
+    <h2>El archivo tsconfig</h2>
+    <br>
+    <pre class="language-js">
+        <code class="language-js">
+            /**********************************************************************/
+            //creando el archivo tsconfig.json
+            tsc --init
+            //el parametro [RutaArchivo] es opcional
+            tsc --watch [RutaArchivo]
+        </code>
+    </pre>
+    <br>
+    <h2>El compilador y tsconfig</h2>
+    <br>
+    <pre class="language-js">
+        <code class="language-js">
+            /**********************************************************************/
+            {
+                "compilerOptions":{
+                    ...
+                },
+                "include":{
+                    "src/*.ts",
+                    "src/**/*.ts"
+                },
+                "exclude":{
+                    "src/test.ts",
+                    "src/*-test.ts"
+                }
+            }
+        </code>
+    </pre>
+    <br>
+    <h2>El compilador y ECMASript</h2>
+    <br>
+    <pre class="language-js">
+        <code class="language-js">
+            /**********************************************************************/
+            //Esta opción sirve para redireccionar los archivos generados por el compilador
+            //a la carpeta personalizada
+            {
+                "compilerOptions": {
+                    "outDir": "./dist"
+                }
+            }
+        </code>
+    </pre>
+    <br>
+    <h2>Decoradores</h2>
+    <br>
+    <pre class="language-js">
+        <code class="language-js">
+            /**********************************************************************/
+            //Esta opción sirve para redireccionar los archivos generados por el compilador
+            //a la carpeta personalizada
+            {
+                "experimentalDecorators": true
+            }
+        </code>
+    </pre>
+</body>
+</html>

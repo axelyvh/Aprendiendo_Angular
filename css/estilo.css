@@ -1,0 +1,26 @@
+* {
+    margin:0;
+    padding:0;
+}
+h1 {
+    text-align: center;
+    list-style:none;
+    font-family: helvetica, arial, serif;
+    margin:30px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background-color: black;
+}
+code[class*="language-"], pre[class*="language-"] {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 30px;
+}
+body {
+    max-width: 1100px;
+    margin:0 auto;
+}
