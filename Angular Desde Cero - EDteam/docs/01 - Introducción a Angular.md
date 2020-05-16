@@ -13,7 +13,7 @@
     * Móvil Nativo
     * Escritorio
 
-![Plataforma Angular](/img/plataforma_angular.png)
+![Plataforma Angular](../img/plataforma_angular.png)
 
 ## 2 - AngularJS vs Angular
 
@@ -30,7 +30,7 @@
 
 Existe Angular 2, 4, 5, 6, 7, 8, 9, etc. Pero solo es "Angular", no importa la versión. Ya que las versiones significan que el framework evoluciona. 
 
-![Angular](/img/angular_typescript.png)
+![Angular](../img/angular_typescript.png)
 
 ### Versiones
 
@@ -104,7 +104,7 @@ major.minor.patch -> 8.2.6
 
 ### Arquitectura
 
-![Arquitectura angular](/img/arquitectura_angular.png)
+![Arquitectura angular](../img/arquitectura_angular.png)
 
 ### Entorno de Desarrollo
 
