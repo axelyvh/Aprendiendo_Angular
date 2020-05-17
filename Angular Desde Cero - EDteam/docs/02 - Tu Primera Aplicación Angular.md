@@ -37,7 +37,6 @@ npm install -g @angular/cli
 ng new app-axel-angular
 
 // Creando un proyecto angular con personalización
-
 ng new app-axel-angular --routing --prefix ax --style css --skip-install
 
 // --routing -> Genera un modulo para el manejo de rutas.
@@ -46,7 +45,7 @@ ng new app-axel-angular --routing --prefix ax --style css --skip-install
 
 // --style <css> ->  Se define el tipo de archivo para los estilos.
 
-// --skip-install -> Permite genera la estructura del proyecto sin instalar las dependencias.
+// --skip-install -> Permite generar la estructura del proyecto sin instalar las dependencias.
 
 ```
 
