@@ -111,4 +111,4 @@ major.minor.patch -> 8.2.6
 * Git
 * GitHub
 * NodeJS
-* 
+* Visual Studio Code
