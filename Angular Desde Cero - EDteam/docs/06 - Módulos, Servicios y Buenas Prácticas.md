@@ -13,7 +13,7 @@
 * Se suelen enfocar en
     * feature de la aplicación
     * un dominio de la lógica de negocio
-    * coleción común o utilitarios
+    * colección común o utilitarios
 
 * También pueden agregar servicios
 * Se pueden cargar al inicio o usando estrategias como lazy loading (asíncrono con el router)
@@ -146,7 +146,7 @@ export class HeroService {
 ## Buenas Prácticas en Angular
 
 * Convenciones para estructura de archivos
-* Principio: Sinlge Responsibility
+* Principio: Single Responsibility
 * Convenciones de nombre (naming)
 * Estructura de una aplicación
 * Buenas prácticas sobre componentes

@@ -69,7 +69,7 @@ export class AppComponent {
 ``` html
 
 <ul>
-    <li *ngFor="let hero in of heroes">{{hero.name}}</li>
+    <li *ngFor="let hero of heroes">{{hero.name}}</li>
 </ul>
 
 <!-- 
