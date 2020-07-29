@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/libs/animate/animate.css";
+
+body {
+    padding-bottom: 50px;
+}
+
+.main-container{
+    margin-top: 20px;
+}
