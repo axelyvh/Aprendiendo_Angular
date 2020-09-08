@@ -1,1 +1,19 @@
-search
+<div class="row m-3">
+    <div class="col">
+        <input #termimo (keyup)="SearchArtist(termimo.value)" class="form-control" placeholder="Buscar artista">
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 m-3">
+    <div class="col-md-2" *ngFor="let cancion of Canciones">
+        <div class="card h-100">
+            <img [src]="cancion.images[0].url" class="card-img-top" [alt]="cancion.name">
+            <div class="card-body">
+                <h5 class="card-title">{{cancion.name}}</h5>
+                <p class="card-text">
+                    <span *ngFor="let artista of cancion.artists" class="badge bg-primary">{{artista.name}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

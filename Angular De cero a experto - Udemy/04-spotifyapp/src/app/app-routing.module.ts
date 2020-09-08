@@ -8,16 +8,6 @@ import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    component: HomeComponent
-  },
-  {
-    path: '**',
-    pathMatch: 'full',
-    component: HomeComponent
-  },
-  {
     path: 'home',
     component: HomeComponent
   },
@@ -28,6 +18,16 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchComponent
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    component: HomeComponent
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    component: HomeComponent
   }
 ];
 
