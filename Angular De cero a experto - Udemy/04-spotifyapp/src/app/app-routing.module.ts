@@ -12,12 +12,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'artista',
-    component: ArtistaComponent
-  },
-  {
     path: 'search',
     component: SearchComponent
+  },
+  {
+    path: 'artista/:id',
+    component: ArtistaComponent
   },
   {
     path: '',

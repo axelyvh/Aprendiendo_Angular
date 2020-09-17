@@ -11,6 +11,11 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { NoimagenPipe } from './pipes/noimagen.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { UrlseguroPipe } from './pipes/urlseguro.pipe';
 
 // Services
 
@@ -20,7 +25,12 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagenPipe,
+    DomseguroPipe,
+    TarjetaComponent,
+    LoadingComponent,
+    UrlseguroPipe
   ],
   imports: [
     BrowserModule,
