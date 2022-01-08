@@ -1,0 +1,103 @@
+
+<table class="table">
+  <tr>
+    <th>Pipe</th>
+    <th>Valor</th>
+    <th>Codigo</th>
+    <th width="200px">Resultado</th>
+  </tr>
+
+  <tr>
+    <td>TitleCase</td>
+    <td>{{ title }}</td>
+    <td>| titlecase</td>
+    <td>{{ title | titlecase }}</td>
+  </tr>
+  
+  <tr>
+    <td>UpperCase</td>
+    <td>{{ title }}</td>
+    <td>| uppercase</td>
+    <td>{{ title | uppercase }}</td>
+  </tr>
+  
+  <tr>
+    <td>LowerCase</td>
+    <td>{{ title }}</td>
+    <td>| lowercase</td>
+    <td>{{ title | lowercase }}</td>
+  </tr>
+
+  <tr>
+    <td>Slice</td>
+    <td>{{ paragraph }}</td>
+    <td>| slice:0:30</td>
+    <td>{{ paragraph | slice:0:30 }}</td>
+  </tr>
+
+  <tr *ngFor="let item of items | slice:0:2">
+    <td>Slice</td>
+    <td>{{ items }}</td>
+    <td>| slice:0:1</td>
+    <td>{{ item }}</td>
+  </tr>
+  
+  <tr>
+    <td>Decimal</td>
+    <td>{{ price }}</td>
+    <td>| decimal</td>
+    <td>{{ price | number:'.2-2' }}</td>
+  </tr>
+
+  <tr>
+    <td>Currency</td>
+    <td>{{ price }}</td>
+    <td>| currency</td>
+    <td>{{ price | currency:'PEN':'S/ ':'.2-2' }}</td>
+  </tr>
+
+  <tr>
+    <td>Date</td>
+    <td>{{ today }}</td>
+    <td>| date</td>
+    <td>{{ today | date:'dd/MM/yyyy' }}</td>
+  </tr>
+
+  <tr>
+    <td>Percent</td>
+    <td>{{ advance }}</td>
+    <td>| percent</td>
+    <td>{{ advance | percent }}</td>
+  </tr>
+
+  <tr>
+    <td>Json</td>
+    <td>{{ person }}</td>
+    <td>| json</td>
+    <td>
+      <pre>{{ person | json }}</pre>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Status (Personalizado)</td>
+    <td>{{ person.status }}</td>
+    <td>| status</td>
+    <td>
+      <pre>{{ person.status | status }}</pre>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Status (Personalizado)</td>
+    <td>{{ person.status }}</td>
+    <td>| status</td>
+    <td>
+      <img [src]="fileName | iconPath:defaultFileName" alt="" width="50">
+    </td>
+  </tr>
+
+
+</table>
+
+<br *ngFor="let _ of [].constructor(50)" >

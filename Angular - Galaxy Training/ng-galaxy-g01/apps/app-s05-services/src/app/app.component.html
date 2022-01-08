@@ -1,0 +1,29 @@
+
+<nav class="navbar navbar-expand navbar-light bg-light mb-4">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Tienda</a>
+    <ul class="navbar-nav mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/comprar">
+          <i class="bi bi-cart-fill"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin">
+          Intranet
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+<!--
+<div *ngIf="isLoading" class="loader">
+  Cargando ...
+</div>
+-->
+
+<div *ngIf="isLoading" class="spinner-border text-primary spinner-fixed" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>

@@ -1,0 +1,16 @@
+<button class="btn btn-{{ tier }} {{ sizeClass }}">
+  <!--
+    select:
+    etiqueta
+    <ng-content select="i" ></ng-content>
+  
+    clase css
+    atributo
+    <ng-content select="[start]" ></ng-content>
+
+  -->
+  <ng-content select="[start]" ></ng-content>
+  <ng-content ></ng-content>
+  <ng-content select="[end]" ></ng-content>
+
+</button>

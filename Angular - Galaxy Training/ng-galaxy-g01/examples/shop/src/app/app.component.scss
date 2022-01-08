@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  height: 100vh;
+  overflow: auto;
+
+  mat-toolbar {
+    @apply sticky top-0 z-10;
+  }
+}

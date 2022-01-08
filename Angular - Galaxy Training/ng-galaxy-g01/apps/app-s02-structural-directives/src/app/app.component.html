@@ -1,0 +1,82 @@
+
+<div class="container">
+  <h1>*ngIf - ng-template</h1>
+  <div class="accordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button (click)="active = !active" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Accordion Item #1
+        </button>
+      </h2>
+      <div *ngIf="active; else message" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        </div>
+      </div>
+
+      <ng-template #message>
+        <div>
+          Por favor seleccione el acordion que desea desplegar
+        </div>
+      </ng-template>  
+
+    </div>
+  </div>
+
+  <h1>*ngFor - ng-container</h1>
+
+  <div class="row">
+    <div *ngFor="let post of posts; let i = index" class="col-4">
+      <div class="card" [style.background]="!post.active ? 'grey': 'white'">
+        <div class="card-body">
+          <h5 class="card-title">{{ i }}-{{ post.title }}</h5>
+          <p class="card-text">{{ post.description }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="item-list">
+    <ng-container *ngFor="let post of posts; let i = index" >
+      <div class="item">
+        <h5>{{ i }}-{{ post.title }}</h5>
+        <p>{{ post.description }}</p>
+      </div>
+      <hr>
+    </ng-container>
+  </div>
+
+<h1>[ngSwitch] - *ngSwitchCase - *ngSwitchDefault</h1>
+
+<ng-container *ngFor="let post of posts; let i = index">
+
+  <ng-container [ngSwitch]="post.template" > 
+
+    <div *ngSwitchCase="'template1'" class="card" [style.background]="!post.active ? 'grey': 'white'">
+      <div class="card-body">
+        <h5 class="card-title">{{ i }}-{{ post.title }}</h5>
+        <p class="card-text">{{ post.description }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    
+    <ng-container *ngSwitchCase="'template2'" > 
+      <div class="item">
+        <h5>{{ i }}-{{ post.title }}</h5>
+        <p>{{ post.description }}</p>
+      </div>
+      <hr>
+    </ng-container>
+    
+    <p *ngSwitchCase="'template3'">{{ post.title }} - {{ post.description }}</p>
+
+    <ng-container *ngSwitchDefault > 
+      No hay template para este post
+    </ng-container>
+
+  </ng-container>
+
+</ng-container>
+
+

@@ -1,0 +1,32 @@
+
+
+  <mat-form-field appearance="outline">
+    <mat-label>Categoria</mat-label>
+    <mat-select [formControl]="categoryField">
+      <mat-option value="" selected>Todos</mat-option>
+      <mat-option *ngFor="let category of categories$ | async" [value]="category">{{ category | titlecase }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div *ngIf="(products$ | async) as products; else loading" class="card-grid">
+    <mat-card *ngFor="let product of products$ | async" class="card mat-elevation-z2">
+      <img [src]="product.image" class="poster mx-auto mb-2" >
+      <mat-card-content class="flex-grow">
+        <h3 class="text-lg">{{ product.title | slice:0:50 }}</h3>
+        <h1 class="text-xl text-blue-800">{{ product.price | currency:'S/ ' }}</h1>
+
+      </mat-card-content>
+      <mat-card-actions class="text-center">
+        <button mat-stroked-button color="primary" (click)="addShoppingCartProduct(product)">
+          <span>Agregar</span>
+          <mat-icon class="ml-2">shopping_cart</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <ng-template #loading>
+    <div class="flex justify-center items-center h-60">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>

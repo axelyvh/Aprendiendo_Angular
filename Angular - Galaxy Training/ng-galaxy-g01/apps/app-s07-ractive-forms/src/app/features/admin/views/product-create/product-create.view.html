@@ -1,0 +1,73 @@
+<form [formGroup]="formCheckboxes">
+  <input type="checkbox" (change)="addCheckbox($event)" id="cbox1" value="first_checkbox"><label>Este es mi primer checkbox</label>
+  <input type="checkbox" (change)="addCheckbox($event)" id="cbox2" value="second_checkbox"><label>Este es mi segundo checkbox</label>
+</form>
+
+<div class="container">
+  <input class="form-control" type="text" [formControl]="titleField" >
+  <span *ngIf="titleField.hasError('required') && (titleField.touched || titleField.dirty)">
+    Este campo es requerido
+  </span>
+  <br>
+  <button class="btn" (click)="setTitleFieldValidators()">Agregar validación</button>
+  <button class="btn" (click)="clearTitleFieldValidators()">Quitar validación</button>
+
+  <hr>
+  <h1>Formulario de producto</h1>
+
+  <form [formGroup]="productForm">
+    <input class="form-control" type="text" formControlName="title" >
+    <span *ngIf="titleControl.hasError('required')">
+      Este campo es requerido
+    </span>
+
+    <input class="form-control" type="text" formControlName="price" >
+    <span *ngIf="productForm.get('price').hasError('range')">
+      Este valor debe estar entre {{ productForm.get('price').getError('range').min }} y {{ productForm.get('price').getError('range').max }}
+    </span>
+    <input class="form-control" type="text" formControlName="description" >
+
+    <input class="form-control" type="text" formControlName="category" >
+    <input class="form-control" type="text" formControlName="image" >
+  </form>
+
+  <hr>
+
+  <h1>Formulario de registro</h1>
+
+  <form [formGroup]="registerForm">
+    <input class="form-control" type="text" formControlName="email" placeholder="email">
+    <span *ngIf="emailField.hasError('emailFormat')">
+      {{ emailField.getError('emailFormat') }}
+    </span>
+    <span *ngIf="emailField.hasError('emailExist')">
+      {{ emailField.getError('emailExist') }}
+    </span>
+
+    <input class="form-control" type="text" formControlName="password" placeholder="password">
+    <span *ngIf="registerForm.get('password').hasError('strongPassword')">
+      Esta contraseña no es fuerte
+    </span>
+    <input class="form-control" type="text" formControlName="confirmPassword" placeholder="confirmPassword">
+
+    <span *ngIf="registerForm.hasError('passwordConfirm')">
+      Las contraseñas no coinciden
+    </span>
+
+    <app-radio-group formControlName="rol" label="Roles" [options]="options" ></app-radio-group>
+
+    <input *ngIf="registerForm.controls?.age" class="form-control" type="text" formControlName="age" placeholder="age">
+
+
+    <br>
+    <button class="btn" (click)="addRegisterControl()">Agregar control</button>
+    <button class="btn" (click)="removeRegisterControl()">Quitar control</button>
+  
+  </form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

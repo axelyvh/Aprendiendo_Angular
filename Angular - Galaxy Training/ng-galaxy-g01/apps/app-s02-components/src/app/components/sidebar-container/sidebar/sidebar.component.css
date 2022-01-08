@@ -1,0 +1,17 @@
+:host {
+  width: 250px;
+  height: 100%;
+  border-right: 1px solid;
+  margin-left: -250px;
+  transition: margin-left .3s;
+}
+
+:host.active {
+  margin-left: 0;
+}
+
+:host > .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

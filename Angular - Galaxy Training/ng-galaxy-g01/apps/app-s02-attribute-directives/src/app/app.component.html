@@ -1,0 +1,45 @@
+<h1>{{ title }}</h1>
+
+<h2>ngClass y Alternativas</h2>
+
+<div class="box {{ boxClass }}">
+</div>
+
+<div class="box"
+  [class.box-active]="boxClass === 'box-active'"
+  [class.box-inactive]="boxClass === 'box-inactive'">
+</div>
+
+<div class="box"
+  [class.box-active]="active"
+  [class.box-inactive]="!active">
+</div>
+
+<div class="box" [ngClass]="{
+  'box-active': boxClass === 'box-active',
+  'box-inactive': boxClass === 'box-inactive'
+}">
+</div>
+<div class="box" [ngClass]="{
+  'box-active': active,
+  'box-inactive': !active
+}">
+</div>
+
+<button (click)="changeBoxClass('box-active')">Activo</button>
+<button (click)="changeBoxClass('box-inactive')">Inactivo</button>
+
+<h2>ngStyle y Alternativas</h2>
+
+<div class="box" [style]="boxStyle">
+</div>
+
+<div class="box"
+  [style.background]="boxBackground">
+</div>
+
+<div class="box"
+  [ngStyle]="{
+    'background': boxBackground
+  }">
+</div>

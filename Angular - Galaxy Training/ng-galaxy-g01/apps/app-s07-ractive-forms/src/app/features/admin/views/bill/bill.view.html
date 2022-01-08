@@ -1,0 +1,58 @@
+<div class="container">
+  <form [formGroup]="billForm" class="form" (ngSubmit)="save()" >
+    <div class="mb-3">
+      <div class="row" formGroupName="client" >
+        <div class="col-4">
+          <label class="form-label">DNI</label>
+          <app-input formControlName="documentNumber"></app-input>
+        </div>
+        <div class="col-8">
+          <label class="form-label">Cliente</label>
+          <input formControlName="fullname" class="form-control" />
+        </div>
+      </div>
+
+    </div>
+    <div class="mb-3" formArrayName="products">
+      <table class="table table-bordered">
+        <tr>
+          <th>Nro</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Total</th>
+        </tr>
+        <!-- DECLARAR TIPO ANY EN TEMPLATE: $any(billForm.get('products')).controls -->
+        <!-- FOR para controles  -->
+        <!--<tr *ngFor="let control of productsField.controls; let controlName = index"> -->
+          <!--
+            Opción 1 <input [formControl]="control">
+            Opción 2 <input [formControlName]="controlName">
+          -->
+        <!-- FOR para grupos  -->
+        <tr *ngFor="let group of productsField.controls; let groupName = index">
+          <!--
+            Opción 1 <ng-container [formGroup]="group"></ng-container>
+            Opción 2 <ng-container [formGroupName]="groupName"></ng-container>
+          -->
+          <ng-container [formGroup]="group">
+            <td>1</td>
+            <td><input formControlName="product" class="form-control" type="text"></td>
+            <td><input formControlName="quantity" class="form-control" type="text"></td>
+            <td><input formControlName="price" class="form-control" type="text"></td>
+            <td><button class="btn" (click)="removeProduct(groupName)" >x</button></td>
+          </ng-container>
+        </tr>
+        
+      </table>
+      <span *ngIf="productsField.hasError('minArrayLength')">
+        El minimo de filas no se cumple
+      </span>
+
+
+      <button type="button" class="btn btn-primary" (click)="addProduct()">Agregar fila</button>
+      <button type="button" class="btn btn-primary" (click)="reset()">Restaurar Formulario</button>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+  </form>
+</div>

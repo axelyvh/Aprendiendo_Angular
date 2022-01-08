@@ -1,0 +1,7 @@
+.divider {
+  border: 1px;
+}
+
+.item-list > .item {
+  background: red;
+}

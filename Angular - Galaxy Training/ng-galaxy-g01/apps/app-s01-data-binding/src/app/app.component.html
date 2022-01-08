@@ -1,0 +1,44 @@
+<h1 style="text-align: center;">DATA BINDING</h1>
+
+<hr>
+
+<h2>STRING INTERPOLATION (INTERPOLACION DE CADENAS)</h2> 
+
+<p>{{ title }}</p>
+<p>
+  {{ student.name }} {{ student.lastName }}
+</p>
+<p>{{ active }}</p>
+
+<input type="text" value="{{ student.name }}" >
+
+<hr>
+
+<h2>PROPERTY BINDING (ENLACE DE PROPIEDADES)</h2> 
+
+<input type="checkbox" [checked]="active" >
+
+<hr>
+
+<h2>EVENT BINDING (ENLACE DE EVENTOS) </h2>
+<button (click)="save()" >Guardar</button>
+
+<hr>
+
+<h2>TWO WAY DATA BINDING (ENLACE BIDIRECCIONAL) </h2>
+
+<input type="text" [value]="name" (keyup)="updateName($event)">
+<input type="text" [(ngModel)]="name">
+
+<p>{{ name }}</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

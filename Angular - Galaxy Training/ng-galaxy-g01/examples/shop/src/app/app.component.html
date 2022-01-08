@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <mat-toolbar-row class="container mx-auto flex px-4">
+    <div class="flex-grow" routerLink="/">Galaxy Shop V2</div>
+    
+    <button mat-icon-button [matBadge]="shoppingCardProductsCount$ | async" matBadgeOverlap="true" matBadgeColor="warn" routerLink="carrito">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container mx-auto py-6 px-4">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,111 @@
+<!-- USANDO NG FORM -->
+
+<form #form="ngForm" (ngSubmit)="signIn(form)" class="form">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      [ngModel]="credentials.email"
+      name="email"
+      #emailField="ngModel"
+      required
+      appEmailFormat
+      appEmailExist
+      type="email"
+      class="form-control"
+      [class.is-invalid]="emailField.invalid && (emailField.touched || emailField.dirty)"
+      [ngClass]="{
+        'is-valid': emailField.valid && (emailField.touched || emailField.dirty)
+      }"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+    />
+    <span *ngIf="emailField.hasError('emailFormat')">
+      {{ emailField.getError('emailFormat') }}
+    </span>
+    <span *ngIf="emailField.hasError('emailExist')">
+      {{ emailField.getError('emailExist') }}
+    </span>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input
+      ngModel
+      name="password"
+      #passwordField="ngModel"
+      required
+      minlength="3"
+      maxlength="20"
+      [class.is-invalid]="passwordField.invalid && (passwordField.touched || passwordField.dirty)"
+      [ngClass]="{
+        'is-valid': passwordField.valid && (passwordField.touched || passwordField.dirty)
+      }"
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+    />
+    <ng-container *ngIf="(passwordField.touched || passwordField.dirty)">
+      <span *ngIf="passwordField.hasError('required')">Este campo es requerido</span>
+      <span *ngIf="passwordField.hasError('minlength')">
+        Este campo debe tener minimo {{ passwordField.errors.minlength.requiredLength }} caracteres
+        Este campo debe tener minimo {{ passwordField.getError('minlength').requiredLength }} caracteres
+      </span>
+    </ng-container>
+  </div>
+
+  <app-radio-group
+  label="Roles"
+  [options]="rols"
+  ngModel name="rol"></app-radio-group>
+
+  <button type="submit" class="btn btn-primary">
+    Submit
+  </button>
+</form>
+
+<!-- USANDO NG MODEL COMO ENLACE BIDIRECCIONAL
+<div class="form">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      [(ngModel)]="credentials.email"
+      #emailField="ngModel"
+      required
+      type="email"
+      class="form-control"
+      [class.is-invalid]="emailField.invalid && (emailField.touched || emailField.dirty)"
+      [ngClass]="{
+        'is-valid': emailField.valid && (emailField.touched || emailField.dirty)
+      }"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input
+      [(ngModel)]="credentials.password"
+      #passwordField="ngModel"
+      required
+      minlength="3"
+      maxlength="20"
+      [class.is-invalid]="passwordField.invalid && (passwordField.touched || passwordField.dirty)"
+      [ngClass]="{
+        'is-valid': passwordField.valid && (passwordField.touched || passwordField.dirty)
+      }"
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+    />
+    <ng-container *ngIf="(passwordField.touched || passwordField.dirty)">
+      <span *ngIf="passwordField.hasError('required')">Este campo es requerido</span>
+      <span *ngIf="passwordField.hasError('minlength')">
+        Este campo debe tener minimo {{ passwordField.errors.minlength.requiredLength }} caracteres
+        Este campo debe tener minimo {{ passwordField.getError('minlength').requiredLength }} caracteres
+      </span>
+    </ng-container>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="signIn(passwordField)">
+    Submit
+  </button>
+</div>
+-->

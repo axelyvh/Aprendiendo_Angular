@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  padding-top: 10%;
+}
+
+:host .form {
+  max-width: 100%;
+  width: 300px;
+  margin: auto;
+}

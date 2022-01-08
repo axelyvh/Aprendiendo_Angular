@@ -1,0 +1,68 @@
+
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <!--
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Inicio</a>
+        </li>
+        -->
+
+        <!--
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/inicio" routerLinkActive="active" >Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/talleres" routerLinkActive="active">Talleres</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contactanos']" routerLinkActive="active">Contactanos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/plataforma']" routerLinkActive="active">Plataforma</a>
+        </li>
+        -->
+
+        <li class="nav-item">
+          <a class="nav-link" (click)="goView('/inicio')" >Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/talleres" routerLinkActive="active">Talleres</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contactanos']" routerLinkActive="active">Contactanos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/plataforma']" routerLinkActive="active">Plataforma</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorias
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li *ngFor="let category of categories" >
+              <a class="dropdown-item" [routerLink]="['/categoria', category.slug]" routerLinkActive="active" >{{ category.title }}</a>
+              
+              <!--
+              <a class="dropdown-item" (click)="goCategory(category.slug)" >{{ category.title }}</a>
+              -->
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/iniciar-sesion']" routerLinkActive="active">Iniciar Sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/mi-cuenta']" routerLinkActive="active">Mi Cuenta</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,20 @@
+.spinner-fixed {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: gray;
+  opacity: .8;
+  font-size: xx-large;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

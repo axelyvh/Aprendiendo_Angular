@@ -1,0 +1,16 @@
+
+<div class="container py-5">
+
+  <input type="text" class="form-control mb-5" (keyup.enter)="add($event.target.value)" >
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let task of tasks; let i = index">
+      <input class="mr-2" type="checkbox" [checked]="task.completed" (change)="toggleCompleted(task)" >
+      <span class="mr-2" [class.completed-text]="task.completed" >{{ task.description }}</span>
+
+      <button class="btn btn-danger btn-sm" (click)="remove(task.id)">X</button>
+    </li>
+  </ul>
+
+
+</div>

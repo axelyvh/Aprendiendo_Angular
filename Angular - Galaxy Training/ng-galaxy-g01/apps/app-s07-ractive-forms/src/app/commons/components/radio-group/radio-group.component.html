@@ -1,0 +1,13 @@
+<h1>{{ label }}</h1>
+<label *ngFor="let option of options" class="container"
+  >{{ option.label }}
+  <input
+    type="radio"
+    name="radio"
+    [(ngModel)]="value"
+    (ngModelChange)="onSelect()"
+    [value]="option.value"
+    [disabled]="isDisabled"
+  />
+  <span class="checkmark"></span>
+</label>
